@@ -1,0 +1,39 @@
+body {
+	margin:0px;
+	padding:0px;
+	min-height: 100vh;
+	background-image: none;
+	background-color: #222;
+
+	display: flex;
+    justify-content: center;  /* Horizontally centers */
+    align-items: center;      /* Vertically centers */
+    margin: 0;
+}
+
+.clock-box {
+	position: relative;
+	width: 354px;
+	height: 354px;
+}
+
+.face::before { content:url("svg/watch-face.svg"); }
+.second-hand::before { content:url("svg/second-hand.svg"); }
+.minute-hand::before { content:url("svg/minute-hand.svg"); }
+.hour-hand::before { content:url("svg/hour-hand.svg"); }
+
+.face, .second-hand, .minute-hand, .hour-hand {
+	width: 354px;
+	height: 354px;
+	position: absolute;
+}
+
+.second-hand {
+	transition-timing-function: ease;
+	transition-duration: 0.25s;
+}
+
+.resize-animation-stopper * {
+  transition: none !important;
+  animation: none !important;
+}
